@@ -31,7 +31,7 @@ int main(){
 
 
 
-        	printf("\n\t\tSistema Budega IMD\n");
+        printf("\n\t\tSistema Budega IMD\n");
 
 		printf( "_______________________________________________\n" );
 		printf( "\n\t\tMENU PRINCIPAL\n\n" );
@@ -47,13 +47,24 @@ int main(){
 
     system("clear||cls");
 
-    printf("\n\tMenu Cliente.\n");
+
 
    switch (opcao){
 
+    case 'S':
+    printf("** Sair **");
+    break;
+
+
+    case 's':
+    printf("** Sair **");
+    break;
+
+
+
       case 1:
 
-
+    printf("\n\tMenu Cliente.\n");
     printf("\n1. Filtrar produtos por preço.\n ");
     printf("\n2 Filtrar produtos por estoque. \n ");
     printf("\n3 Carrinho de compras. \n ");
@@ -92,6 +103,7 @@ int main(){
     // Falta Fazer caso seja sim  return para menu principal
     case 2:
 
+        printf("\n\tMenu Funcionário.\n");
         printf("\n1. Alertar estoque baixo e produto fora da validade.\n");
         printf("\n2. Entrada de produtos novos (pelo teclado ou por um arquivo).\n");
         printf("\n3. Reposição de estoques.\n");
