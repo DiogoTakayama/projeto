@@ -2,106 +2,101 @@
 #include <stdlib.h>
 #include <locale.h>
 int main(){
-    setlocale(LC_ALL, "Portuguese");
-    int opcao;
-    int cliente;
-    int funcionario;
+	
+    	setlocale(LC_ALL, "Portuguese");
+    	int opcao;
+    	int cliente;
+	int funcionario;
 
-     printf("\t\tProdutos\n");
+      	printf("\t\tProdutos\n");
+      	FILE *file;
 
-   FILE *file;
-
-      file = fopen ("produtos.txt","r");
-      if (file== NULL){
-        printf ("Arquivo nao pode ser acessado");
+      	file = fopen ("produtos.txt","r");
+      	if (file== NULL){
+        printf ("Arquivo não pode ser acessado.");
         getchar();
         exit(0);
-      }
-      char produtos1 [100];
+      	}
+	
+      	char produtos1 [100];
 
-      while (fgets(produtos1,100,file)!=NULL){
+      	while (fgets(produtos1,100,file)!=NULL){
 
         printf("%s",produtos1);
 
-      }
+      	}
 
         fclose(file);
         system("pause");
         system("clear||cls");
 
 
-
         printf("\n\t\tSistema Budega IMD\n");
+	printf( "_______________________________________________\n" );
+	printf( "\n\t\tMENU PRINCIPAL\n\n" );
+	printf( "-----------------------------------------------\n" );
+	printf(" Escolha uma das seguintes opções:\n\n" );
+	printf("  1.Clientes.\n");
+	printf("  2.Funcionários.\n");
+	printf( "-----------------------------------------------\n" );
+	printf( "\t\t\t\tS - Sair\n" );
+	printf( "_______________________________________________\n" );
 
-		printf( "_______________________________________________\n" );
-		printf( "\n\t\tMENU PRINCIPAL\n\n" );
-		printf( "-----------------------------------------------\n" );
-		printf(" Escolha uma das seguintes opções:\n\n" );
-		printf("  1.Clientes\n");
-		printf("  2.Funcionário\n");
-		printf( "-----------------------------------------------\n" );
-		printf( "\t\t\t\tS - Sair\n" );
-		printf( "_______________________________________________\n" );
+        scanf("%d",&opcao);
 
-    scanf("%d",&opcao);
+        system("clear||cls");
 
-    system("clear||cls");
+        switch (opcao){
 
-
-
-   switch (opcao){
-
-    case 'S':
-    printf("** Sair **");
-    break;
+        case 'S':
+        printf("** Sair **");
+        break;
 
 
-    case 's':
-    printf("** Sair **");
-    break;
+        case 's':
+        printf("** Sair **");
+        break;
 
+	case 1:
 
+	printf("\n\tMenu Cliente.\n");
+        printf("\n1. Filtrar produtos por preço.\n ");
+        printf("\n2 Filtrar produtos por estoque. \n ");
+        printf("\n3 Carrinho de compras. \n ");
+        printf("\n4 Voltar ao Menu principal. \n ");
 
-      case 1:
+        printf("\n");
 
-    printf("\n\tMenu Cliente.\n");
-    printf("\n1. Filtrar produtos por preço.\n ");
-    printf("\n2 Filtrar produtos por estoque. \n ");
-    printf("\n3 Carrinho de compras. \n ");
-    printf("\n4 Voltar ao Menu principal. \n ");
+        scanf("%d",&cliente);
 
-    printf("\n");
+        printf("\n");
 
-    scanf("%d",&cliente);
+        if (cliente == 1){
 
-    printf("\n");
+        printf("\n");
+	printf("Filtrar produtos por preço.");
+    	break;
+   	}
+   	else if (cliente == 2){
+     	printf("\n Filtrar produtos por estoque. \n ");
+     	break;
+   	}
+   	else if (cliente == 3){
 
-   if (cliente == 1){
+    	printf("\n Carrinho de compras. \n ");
 
-    printf("\n");
-    printf("Filtrar produtos por preço.");
-    break;
-   }
-   else if (cliente == 2){
-     printf("\n Filtrar produtos por estoque \n ");
-     break;
-   }
-   else if (cliente == 3){
-
-    printf("\n Carrinho de compras. \n ");
-
-    break;
-   }
-   else if (cliente==4){
+    	break;
+   	}
+   	else if (cliente==4){
 
 
 
-    printf("\n*** Voltar ao Menu principal *** \n ");
+    	printf("\n*** Voltar ao Menu principal *** \n ");
 
-    break;//Falta implemetar
-   }
-    // Falta Fazer caso seja sim  return para menu principal
-    case 2:
+    	break;//Falta implemetar
+   	}
+    	// Falta Fazer caso seja o 4 fazer o return para menu principal
+    	case 2:
 
         printf("\n\tMenu Funcionário.\n");
         printf("\n1. Alertar estoque baixo e produto fora da validade.\n");
@@ -117,41 +112,41 @@ int main(){
          printf("\n");
 
         if (funcionario == 1){
-    printf("Alertar estoque baixo e produto fora da validade.");
-    break;
-   }
-   else if (funcionario == 2){
-     printf("\n Entrada de produtos novos (pelo teclado ou por um arquivo).\n ");
-     break;
-   }
-   else if (funcionario == 3){
+    	printf("Alertar estoque baixo e produto fora da validade.");
+    	break;
+   	}
+   	else if (funcionario == 2){
+     	printf("\n Entrada de produtos novos (pelo teclado ou por um arquivo).\n ");
+     	break;
+   	}
+   	else if (funcionario == 3){
 
-    printf("\nReposição de estoques. \n ");
+    	printf("\nReposição de estoques. \n ");
 
-    break;
-   }
+    	break;
+   	}
 
-   else if (funcionario == 4){
+   	else if (funcionario == 4){
 
-    printf("\n Filtrar produtos por preço. \n ");
-    break;
-}
-    else if (funcionario == 5){
+    	printf("\n Filtrar produtos por preço. \n ");
+    	break;
+	}
+    	else if (funcionario == 5){
 
-    printf("\nFiltrar produtos por estoque. \n ");
+    	printf("\nFiltrar produtos por estoque. \n ");
 
-    break;
+    	break;
 
-    }
-     else if (funcionario == 6 ){
+    	}
+     	else if (funcionario == 6 ){
 
-    printf("\n*** Voltar ao Menu principal *** \n ");
+    	printf("\n*** Voltar ao Menu principal *** \n ");
+	// Falta Fazer caso seja o 6 fazer o return para menu principal
+    	break; 
 
-    break;
-
-    }
-   }
-   printf("\n");
-   system("pause");
-    return 0;
-}
+    	}
+   	}
+   	printf("\n");
+   	system("pause");
+   	return 0;
+	}
